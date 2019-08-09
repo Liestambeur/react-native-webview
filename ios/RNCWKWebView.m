@@ -244,6 +244,11 @@ static NSURLCredential* clientAuthenticationCredential;
   _webView.allowsBackForwardNavigationGestures = _allowsBackForwardNavigationGestures;
 }
 
+// Update webview property when the component prop changes.
+- (void)setAllowsReadAccessToURL:(BOOL)allowsReadAccessToURL {
+  _allowsReadAccessToURL = allowsReadAccessToURL;
+}
+
 
 - (void)removeFromSuperview
 {
@@ -398,7 +403,11 @@ static NSURLCredential* clientAuthenticationCredential;
         [_webView loadRequest:request];
     }
     else {
-        [_webView loadFileURL:request.URL allowingReadAccessToURL:request.URL];
+        if (_allowsReadAccessToURL) {
+          [_webView loadFileURL:request.URL allowingReadAccessToURL:_allowsReadAccessToURL];
+        } else {
+          [_webView loadFileURL:request.URL allowingReadAccessToURL:request.URL];
+        }
     }
 }
 

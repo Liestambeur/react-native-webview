@@ -47,6 +47,7 @@ This document lays out the current public properties and methods for the React N
 - [`keyboardDisplayRequiresUserAction`](Reference.md#keyboardDisplayRequiresUserAction)
 - [`hideKeyboardAccessoryView`](Reference.md#hidekeyboardaccessoryview)
 - [`allowsBackForwardNavigationGestures`](Reference.md#allowsbackforwardnavigationgestures)
+- [`allowsReadAccessToURL`](Reference.md#allowsReadAccessToURL)
 - [`incognito`](Reference.md#incognito)
 - [`allowFileAccess`](Reference.md#allowFileAccess)
 - [`saveFormDataDisabled`](Reference.md#saveFormDataDisabled)
@@ -834,6 +835,17 @@ If true, this will be able horizontal swipe gestures when using the WKWebView. T
 | Type    | Required | Platform |
 | ------- | -------- | -------- |
 | boolean | No       | iOS      |
+
+---
+
+### `allowsReadAccessToURL`
+
+If set, the source URI will have read access to the provided path. The default is the source uri.
+Note that `allowFileAccess` also needs to be enabled.
+
+| Type    | Required | Platform |
+| ------- | -------- | -------- |
+| string  | No       | iOS      |
 
 ---
 

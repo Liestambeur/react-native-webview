@@ -257,6 +257,7 @@ export interface IOSNativeWebViewProps extends CommonNativeWebViewProps {
   allowsBackForwardNavigationGestures?: boolean;
   allowsInlineMediaPlayback?: boolean;
   allowsLinkPreview?: boolean;
+  allowsReadAccessToURL?: string;
   automaticallyAdjustContentInsets?: boolean;
   bounces?: boolean;
   contentInset?: ContentInsetProp;
@@ -375,6 +376,10 @@ export interface IOSWebViewProps extends WebViewSharedProps {
    * back-forward list navigations.
    */
   allowsBackForwardNavigationGestures?: boolean;
+  /**
+   * A String value to allow read access in the specified path (or file)
+   */
+  allowsReadAccessToURL?: boolean;
   /**
    * A Boolean value indicating whether WebKit WebView should be created using a shared
    * process pool, enabling WebViews to share cookies and localStorage between each other.
